@@ -1,6 +1,6 @@
 {
-    "name": "ginkida/agent-runner",
-    "description": "Laravel SDK for Agent Runner — orchestrate AI agents with tool-calling and SSE streaming",
+    "name": "ginkida/laravel-agent-runner",
+    "description": "Laravel SDK for Agent Runner — fluent API for AI agent orchestration with tool-calling, HMAC-signed communication, and real-time SSE streaming",
     "type": "library",
     "license": "MIT",
     "require": {
