@@ -13,7 +13,7 @@ class AgentRunnerServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/agent-runner.php', 'agent-runner');
+        $this->mergeConfigFrom(__DIR__.'/../config/agent-runner.php', 'agent-runner');
 
         $this->app->singleton(ToolRegistry::class);
 
@@ -54,7 +54,7 @@ class AgentRunnerServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/agent-runner.php' => config_path('agent-runner.php'),
+            __DIR__.'/../config/agent-runner.php' => config_path('agent-runner.php'),
         ], 'agent-runner-config');
 
         $this->loadRoutes();
@@ -73,7 +73,7 @@ class AgentRunnerServiceProvider extends ServiceProvider
         $this->app['router']
             ->prefix($config['routes']['prefix'] ?? 'api/agent-runner')
             ->middleware($config['routes']['middleware'] ?? ['api'])
-            ->group(__DIR__ . '/../routes/agent-runner.php');
+            ->group(__DIR__.'/../routes/agent-runner.php');
     }
 
     private function discoverTools(): void

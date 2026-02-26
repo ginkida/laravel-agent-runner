@@ -34,7 +34,7 @@ class ToolDiscovery
                 continue;
             }
 
-            $className = $this->namespace . '\\' . $file->getFilenameWithoutExtension();
+            $className = $this->namespace.'\\'.$file->getFilenameWithoutExtension();
 
             if (! class_exists($className)) {
                 continue;

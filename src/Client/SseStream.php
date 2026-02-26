@@ -103,9 +103,10 @@ class SseStream
             } while ($active && $status === CURLM_OK);
 
             // Yield any remaining events
-            while (count($pendingEvents) > 0) {
-                yield array_shift($pendingEvents);
+            foreach ($pendingEvents as $remainingEvent) {
+                yield $remainingEvent;
             }
+            $pendingEvents = [];
 
             // Check for errors on the individual curl handle (covers network
             // failures, timeouts, and connection resets mid-stream)

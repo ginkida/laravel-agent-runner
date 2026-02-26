@@ -30,8 +30,8 @@ class HmacSigner
         $timestamp = (string) time();
         $nonce = bin2hex(random_bytes(16));
 
-        $payload = $timestamp . '.' . $nonce . '.' . $body;
-        $signature = 'sha256=' . hash_hmac('sha256', $payload, $this->secret);
+        $payload = $timestamp.'.'.$nonce.'.'.$body;
+        $signature = 'sha256='.hash_hmac('sha256', $payload, $this->secret);
 
         return [
             'signature' => $signature,
@@ -57,8 +57,8 @@ class HmacSigner
             return false;
         }
 
-        $payload = $timestamp . '.' . $nonce . '.' . $body;
-        $expected = 'sha256=' . hash_hmac('sha256', $payload, $this->secret);
+        $payload = $timestamp.'.'.$nonce.'.'.$body;
+        $expected = 'sha256='.hash_hmac('sha256', $payload, $this->secret);
 
         return hash_equals($expected, $signature);
     }

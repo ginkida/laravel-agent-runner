@@ -176,7 +176,7 @@ class AgentRunnerClient
 
     private function url(string $path): string
     {
-        return rtrim($this->baseUrl, '/') . $path;
+        return rtrim($this->baseUrl, '/').$path;
     }
 
     private function ensureSuccessful(Response $response): void

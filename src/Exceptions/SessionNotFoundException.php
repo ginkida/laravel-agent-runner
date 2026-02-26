@@ -4,8 +4,8 @@ namespace Ginkida\AgentRunner\Exceptions;
 
 class SessionNotFoundException extends AgentRunnerException
 {
-    public static function withId(string $sessionId): static
+    public static function withId(string $sessionId): self
     {
-        return new static("Session not found: {$sessionId}");
+        return new self("Session not found: {$sessionId}");
     }
 }

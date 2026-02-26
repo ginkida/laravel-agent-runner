@@ -4,23 +4,23 @@ namespace Ginkida\AgentRunner\Exceptions;
 
 class HmacVerificationException extends AgentRunnerException
 {
-    public static function missingHeaders(): static
+    public static function missingHeaders(): self
     {
-        return new static('Missing signature, timestamp, or nonce headers.');
+        return new self('Missing signature, timestamp, or nonce headers.');
     }
 
-    public static function invalidTimestamp(): static
+    public static function invalidTimestamp(): self
     {
-        return new static('Invalid or expired timestamp.');
+        return new self('Invalid or expired timestamp.');
     }
 
-    public static function invalidNonce(): static
+    public static function invalidNonce(): self
     {
-        return new static('Invalid nonce format.');
+        return new self('Invalid nonce format.');
     }
 
-    public static function invalidSignature(): static
+    public static function invalidSignature(): self
     {
-        return new static('Invalid HMAC signature.');
+        return new self('Invalid HMAC signature.');
     }
 }

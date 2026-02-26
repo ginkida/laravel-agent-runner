@@ -1,0 +1,8 @@
+parameters:
+    ignoreErrors:
+        - message: '#Call to function method_exists\(\) .* will always evaluate to true#'
+          paths:
+              - src/AgentRunnerServiceProvider.php
+        - message: '#Empty array passed to foreach#'
+          paths:
+              - src/Client/SseStream.php

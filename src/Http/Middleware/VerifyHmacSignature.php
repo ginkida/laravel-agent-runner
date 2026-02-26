@@ -46,7 +46,7 @@ class VerifyHmacSignature
 
         // Replay protection: reject previously seen nonces.
         // Cache::add() is atomic — returns false if key already exists.
-        $cacheKey = 'agent-runner:nonce:' . $nonce;
+        $cacheKey = 'agent-runner:nonce:'.$nonce;
 
         if (! Cache::add($cacheKey, true, self::NONCE_TTL_SECONDS)) {
             throw HmacVerificationException::invalidSignature();

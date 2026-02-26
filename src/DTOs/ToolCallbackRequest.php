@@ -17,7 +17,7 @@ final readonly class ToolCallbackRequest
 
     public static function fromArray(array $data): static
     {
-        return new static(
+        return new self(
             sessionId: $data['session_id'] ?? '',
             toolName: $data['tool_name'] ?? '',
             arguments: $data['arguments'] ?? [],

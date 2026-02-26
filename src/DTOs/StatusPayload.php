@@ -21,7 +21,7 @@ final readonly class StatusPayload
 
     public static function fromArray(array $data): static
     {
-        return new static(
+        return new self(
             sessionId: $data['session_id'] ?? '',
             clientId: $data['client_id'] ?? '',
             status: $data['status'] ?? '',
