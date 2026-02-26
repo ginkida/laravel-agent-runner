@@ -16,3 +16,4 @@ phpunit.xml
 Thumbs.db
 coverage/
 .php-cs-fixer.cache
+CLAUDE.md
