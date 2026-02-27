@@ -184,6 +184,8 @@ class AgentBuilder
 
     /**
      * Register a callback for text streaming events.
+     *
+     * @param  Closure(string $content): void  $callback
      */
     public function onText(Closure $callback): static
     {
@@ -194,6 +196,8 @@ class AgentBuilder
 
     /**
      * Register a callback for tool call events.
+     *
+     * @param  Closure(string $toolName, array $args): void  $callback
      */
     public function onToolCall(Closure $callback): static
     {
@@ -204,6 +208,8 @@ class AgentBuilder
 
     /**
      * Register a callback for tool result events.
+     *
+     * @param  Closure(string $toolName, bool $success, string $content): void  $callback
      */
     public function onToolResult(Closure $callback): static
     {
@@ -214,6 +220,8 @@ class AgentBuilder
 
     /**
      * Register a callback for thinking events.
+     *
+     * @param  Closure(string $content): void  $callback
      */
     public function onThinking(Closure $callback): static
     {
@@ -224,6 +232,8 @@ class AgentBuilder
 
     /**
      * Register a callback for error events.
+     *
+     * @param  Closure(string $message): void  $callback
      */
     public function onError(Closure $callback): static
     {
@@ -234,6 +244,8 @@ class AgentBuilder
 
     /**
      * Register a callback for the done event.
+     *
+     * @param  Closure(array $data): void  $callback
      */
     public function onDone(Closure $callback): static
     {

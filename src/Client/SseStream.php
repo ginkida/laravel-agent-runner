@@ -124,7 +124,6 @@ class SseStream
         } finally {
             curl_multi_remove_handle($mh, $ch);
             curl_multi_close($mh);
-            curl_close($ch);
             $this->buffer = '';
         }
     }
